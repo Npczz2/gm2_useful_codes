@@ -1,0 +1,13 @@
+//CREATE
+vspd = 0; //Stores the falling speed
+grvt = 0.3; //Stores the gravity force        
+
+//STEP
+vspd += grvt;
+
+if(place_meeting(x, y + vspd, o_floor)) //Checks if the player is going to collide with the floor in the next frame. If so, the falling speed goes null. [Change the "o_floor" with your floor object name]
+{
+	vspd = 0;	
+}
+
+y = y + vspd;
