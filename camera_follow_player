@@ -1,0 +1,14 @@
+//Enable camera and viewport 0 on the room tab
+
+//CREATE
+camx = 0;
+camy = 0;
+
+//STEP 
+camx += (x - (view_wport[0]/2) - camx) * 0.05;
+camy += (y - (view_hport[0]/2) - camy) * 0.05;
+
+var camX = clamp(camx, 0, room_width - view_wport[0]);
+var camY = clamp(camy, 0, room_height - view_hport[0]);
+
+camera_set_view_pos(view_camera[0], camX, camY);
